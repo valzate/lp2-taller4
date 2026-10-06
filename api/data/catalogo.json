@@ -1,0 +1,83 @@
+[
+  {
+    "sku": "COS-1",
+    "marca": "esika",
+    "nombre": "corrector",
+    "precio": 49900,
+    "foto": "images/corrector-esika.jpg",
+    "stock": 12,
+    "activo": true,
+    "categoria": "cosmeticos"
+  },
+  {
+    "sku": "COS-2",
+    "marca": "anika",
+    "nombre": "base",
+    "precio": 69900,
+    "foto": "images/base-anika.jpg",
+    "stock": 8,
+    "activo": true,
+    "categoria": "cosmeticos"
+    },
+    {
+        "sku": "COS-3",
+        "marca": "loreal",
+        "nombre": "polvo compacto",
+        "precio": 59900,
+        "foto": "images/polvo-loreal.jpg",
+        "stock": 15,
+        "activo": true,
+        "categoria": "cosmeticos"
+    },
+    {
+        "sku": "COS-4",
+        "marca": "maybelline",
+        "nombre": "mascara de pestañas",
+        "precio": 79900,
+        "foto": "images/mascara-maybelline.jpg",
+        "stock": 10,
+        "activo": true,
+        "categoria": "cosmeticos"
+    },
+    {
+        "sku": "COS-5",
+        "marca": "revlon",
+        "nombre": "labial",
+        "precio": 39900,
+        "foto": "images/labial-revlon.jpg",
+        "stock": 20,
+        "activo": true,
+        "categoria": "cosmeticos"
+    },
+    {
+        "sku": "SKIN-1",
+        "marca": "garnier",
+        "nombre": "Agua micelar",
+        "precio": 49900,
+        "foto": "images/agua-micelar-garnier.jpg",
+        "stock": 18,
+        "activo": true,
+        "categoria": "skincare"
+    },
+    {
+        "sku": "SKIN-2",
+        "marca": "neutrogena",
+        "nombre": "Crema hidratante",
+        "precio": 69900,
+        "foto": "images/crema-hidratante-neutrogena.jpg",
+        "stock": 12,
+        "activo": true,
+        "categoria": "skincare"
+    },
+    {
+        "sku": "SKIN-3",
+        "marca": "the ordinary",
+        "nombre": "Sérum de vitamina C",
+        "precio": 89900,
+        "foto": "images/serum-vitamina-c-the-ordinary.jpg",
+        "stock": 10,
+        "activo": true,
+        "categoria": "skincare"
+    }
+
+]

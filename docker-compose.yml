@@ -34,6 +34,36 @@ services:
     ports:
       - "8000:8000"
 
+  reverse-proxy:
+    build:
+      context: ./reverse-proxy
+    container_name: lp2taller4-reverse-proxy
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_started
+      frontend:
+        condition: service_started
+    ports:
+      - "80:80"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+
+    container_name: proyecto-frontend
+
+    ports:
+      - "3000:3000"
+
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+      - /app/.next
+
+    restart: unless-stopped
+
 volumes:
   db_data:
 

@@ -1,0 +1,19 @@
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Copia las dependencias del proyecto.
+COPY package*.json ./
+
+# Instala las dependencias.
+RUN npm install
+
+# Copia el resto del código.
+COPY . .
+
+# Puerto de Next.js.
+EXPOSE 3000
+
+# Inicia Next.js accesible desde fuera del contenedor.
+CMD ["npm", "run", "dev", "--", "--hostname", "0.0.0.0"]

@@ -32,8 +32,21 @@ const PRODUCTS_ENDPOINT = process.env.NEXT_PUBLIC_PRODUCTS_API_URL || '/api/prod
 
 function getName(product: Product) { return product.nombre ?? product.name ?? 'Producto sin nombre' }
 function getCategory(product: Product) {
-  const category = product.categoria ?? product.category ?? ''
-  return category.toLowerCase().includes('skin') || category.toLowerCase().includes('cuidado') ? 'Skincare' : 'Maquillaje'
+const category = product.categoria ?? product.category ?? ''
+
+// Si la categoría es un objeto, obtenemos su nombre.
+const categoryName =
+typeof category === 'object' && category !== null
+? category.nombre ?? ''
+: category
+
+// Convertimos el nombre a texto y minúsculas.
+const name = String(categoryName).toLowerCase()
+
+// Clasificamos el producto.
+return name.includes('skin') || name.includes('cuidado')
+? 'Skincare'
+: 'Maquillaje'
 }
 function getPrice(product: Product) {
   const value = Number(product.precio ?? product.price ?? 0)

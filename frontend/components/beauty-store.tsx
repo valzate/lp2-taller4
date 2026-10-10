@@ -28,6 +28,7 @@ type Product = {
 }
 
 const categories = ['Todos', 'Maquillaje', 'Skincare']
+const PRODUCTS_ENDPOINT = process.env.NEXT_PUBLIC_PRODUCTS_API_URL || '/api/productos/'
 
 function getName(product: Product) { return product.nombre ?? product.name ?? 'Producto sin nombre' }
 function getCategory(product: Product) {
@@ -72,7 +73,13 @@ export default function BeautyStore() {
 
   useEffect(() => {
     const controller = new AbortController()
-    fetch('/api/productos/', { signal: controller.signal })
+    setLoading(true)
+    setError('')
+
+    fetch(PRODUCTS_ENDPOINT, {
+      signal: controller.signal,
+      headers: { Accept: 'application/json' },
+    })
       .then(async response => {
         if (!response.ok) throw new Error(`Error ${response.status}`)
         const data = await response.json()
@@ -80,8 +87,11 @@ export default function BeautyStore() {
         if (!Array.isArray(list)) throw new Error('Formato de respuesta no válido')
         setProducts(list.slice(0, 8))
       })
-      .catch(reason => { if (reason.name !== 'AbortError') setError('No pudimos conectar con el catálogo. Intenta nuevamente en unos minutos.') })
+      .catch(reason => {
+        if (reason.name !== 'AbortError') setError('No pudimos conectar con el catálogo. Intenta nuevamente en unos minutos.')
+      })
       .finally(() => setLoading(false))
+
     return () => controller.abort()
   }, [])
 

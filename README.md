@@ -7,17 +7,15 @@
 
 ## Autor
 
-- [@estudiante](https://www.github.com/estudiante)
+- [@valzate](https://www.github.com/valzate)
 
 ## Descripción del Proyecto
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut quam dolor. Quisque elementum est sed massa gravida convallis. Donec volutpat turpis eget lectus feugiat congue. Morbi rutrum auctor eleifend. Etiam iaculis libero tellus, vel aliquet erat tempor sed. Duis efficitur quam vel sapien luctus, sed semper lacus mollis. Suspendisse non nunc eleifend, aliquet elit eget, condimentum augue.
-
-Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus vel nibh fringilla, porta elit vel, consequat libero. Nulla et libero ac nulla ultricies sollicitudin. Sed viverra non nulla id convallis. Morbi vel varius lacus, in maximus nunc. Praesent sed semper diam. Pellentesque vehicula nulla augue, ut porta dolor consequat at.
+En este repositorio encontrara un trabajo donde se siguen teniendo dockers para cada proceso, la base de datos, api y la parte web, en este caso llamado frontend, con en leve cambio de que en ese trabajo se agrega un docker mas y se agrega un nuevo proceso que es el proxy. El frontend en este caso es una pagina construida con v0.app y posteriormente conectandola al api.
 
 ## Proceso
 
-Morbi quam lectus, tempus sit amet mi non, facilisis dignissim erat. Aenean tortor libero, rhoncus eu eleifend ut, volutpat id nisi. Ut porta eros at ante rutrum pharetra. Integer nec nulla dictum, vestibulum ligula id, hendrerit ex. Morbi eget tortor metus.
+Como primer paso se crea y se confugura el api, ya teniendo esta lista crear la pagina en v0.app y se conecta al api, despues se configura el proxy y comienzan las pruebas de que esta funcionando todo correctamente.
 
 [GUIA.md](docs/GUIA.md)
 

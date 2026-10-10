@@ -34,19 +34,6 @@ services:
     ports:
       - "8000:8000"
 
-  reverse-proxy:
-    build:
-      context: ./reverse-proxy
-    container_name: lp2taller4-reverse-proxy
-    restart: unless-stopped
-    depends_on:
-      api:
-        condition: service_started
-      frontend:
-        condition: service_started
-    ports:
-      - "80:80"
-
   frontend:
     build:
       context: ./frontend
@@ -64,6 +51,21 @@ services:
 
     restart: unless-stopped
 
+
+  reverse-proxy:
+    build:
+      context: ./reverse-proxy
+    container_name: lp2taller4-reverse-proxy
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_started
+      frontend:
+        condition: service_started
+    ports:
+      - "8080:80"
+
+ 
 volumes:
   db_data:
 
